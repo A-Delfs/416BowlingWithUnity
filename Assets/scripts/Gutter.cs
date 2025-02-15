@@ -6,7 +6,12 @@ public class Gutter : MonoBehaviour
     {
         // We first get the Rigidbody of the ball
         // and store it in a local variable ballRigidBody
+        if (!triggeredBody.CompareTag("Ball")) return;
+
+
         Rigidbody ballRigidBody = triggeredBody.GetComponent<Rigidbody>();
+
+      
 
         // We store the velocity magnitude before resetting the velocity
         float velocityMagnitude = ballRigidBody.linearVelocity.magnitude;

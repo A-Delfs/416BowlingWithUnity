@@ -18,11 +18,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private InputManager inputManager;
 
     [SerializeField] private TextMeshProUGUI scoreText;
-    [SerializeField] private Transform launcherIndicator;
+    
 
     private FallTrigger[] fallTriggers;
     private GameObject pinObjects;
-    private Vector3 launcherOriginalPosition;
+    
 
 
     private void Start()
@@ -31,14 +31,14 @@ public class GameManager : MonoBehaviour
         inputManager.OnResetPressed.AddListener(HandleReset);
         SetPins();
 
-          launcherOriginalPosition = launcherIndicator.localPosition;
+         
     }
 
     private void HandleReset()
     {
         ball.ResetBall();
         SetPins();
-         launcherIndicator.transform.position = launcherOriginalPosition;
+         
     }
 
     private void SetPins()
